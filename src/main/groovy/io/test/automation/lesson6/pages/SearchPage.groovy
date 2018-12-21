@@ -1,4 +1,4 @@
-package io.test.automation.lesson5.pages
+package io.test.automation.lesson6.pages
 
 import com.codeborne.selenide.SelenideElement
 

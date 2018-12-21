@@ -1,7 +1,7 @@
 package io.test.automation.lesson5.steps
 
 import com.codeborne.selenide.Condition
-import io.test.automation.lesson5.pages.SearchResults
+import io.test.automation.lesson5.pages.SearchResultsPage
 
 /**
  * Created on 19.12.2018
@@ -14,39 +14,39 @@ import io.test.automation.lesson5.pages.SearchResults
 class CalculatorSteps {
 
     private static waitCalculator() {
-        SearchResults.calculator.self.shouldBe(Condition.visible)
+        SearchResultsPage.calculator.self.shouldBe(Condition.visible)
     }
 
     static String calculate(String expression) {
         waitCalculator()
-        SearchResults.calculator.clickButton("C")
+        SearchResultsPage.calculator.clickButton("C")
         expression.toList().each {
             switch (it) {
                 case "(":
-                    SearchResults.calculator.clickButton("( )")
+                    SearchResultsPage.calculator.clickButton("( )")
                     break
                 case ")":
-                    SearchResults.calculator.clickButton("( )")
+                    SearchResultsPage.calculator.clickButton("( )")
                     break
                 case "-":
-                    SearchResults.calculator.clickButton("−")
+                    SearchResultsPage.calculator.clickButton("−")
                     break
                 case "*":
-                    SearchResults.calculator.clickButton("×")
+                    SearchResultsPage.calculator.clickButton("×")
                     break
                 case "/":
-                    SearchResults.calculator.clickButton("÷")
+                    SearchResultsPage.calculator.clickButton("÷")
                     break
                 default:
-                    SearchResults.calculator.clickButton(it)
+                    SearchResultsPage.calculator.clickButton(it)
                     break
             }
         }
-        return SearchResults.calculator.result
+        return SearchResultsPage.calculator.result
     }
 
     static String getResult() {
         waitCalculator()
-        SearchResults.calculator.result
+        SearchResultsPage.calculator.result
     }
 }

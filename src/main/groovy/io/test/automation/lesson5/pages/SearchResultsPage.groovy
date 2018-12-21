@@ -12,9 +12,9 @@ import static com.codeborne.selenide.Selenide.$
  *         email: ykudryavtsev@maxilect.com
  */
 
-class SearchResults {
+class SearchResultsPage {
 
-    static getCalculator() {
+    static Calculator getCalculator() {
         def instance = new Calculator()
         instance.self = $(".calculator__wrapper")
         return instance

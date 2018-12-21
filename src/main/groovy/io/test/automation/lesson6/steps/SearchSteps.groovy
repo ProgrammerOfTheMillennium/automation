@@ -1,4 +1,4 @@
-package io.test.automation.lesson5.steps
+package io.test.automation.lesson6.steps
 
 import com.codeborne.selenide.Selenide
 import com.codeborne.selenide.WebDriverRunner
@@ -16,7 +16,7 @@ class SearchSteps {
 
     private static openSearchPage() {
         def desiredUrl = "https://ya.ru/"
-        if(WebDriverRunner.url() != desiredUrl) {
+        if(!WebDriverRunner.hasWebDriverStarted() || WebDriverRunner.url() != desiredUrl) {
             Selenide.open(desiredUrl)
         }
     }

@@ -1,5 +1,14 @@
 package io.test.automation
 
+import io.qameta.allure.Description
+import io.qameta.allure.Epic
+import io.qameta.allure.Feature
+import io.qameta.allure.Issue
+import io.qameta.allure.Link
+import io.qameta.allure.Severity
+import io.qameta.allure.SeverityLevel
+import io.qameta.allure.Story
+import io.qameta.allure.TmsLink
 import io.test.automation.lesson5.steps.CalculatorSteps
 import io.test.automation.lesson5.steps.SearchSteps
 import org.junit.Test
@@ -12,12 +21,40 @@ import org.junit.Test
  *         email: ykudryavtsev@maxilect.com
  */
 
+@Epic("Тестовый эпик")
+@Feature("Тестовая фича")
+@Link("www.ya.ru")
+@Issue("TICKET-1")
 class LessonSeven {
+
     @Test
+    @Description("Пример теста")
+    @Severity(SeverityLevel.TRIVIAL)
+    @TmsLink("TC-1")
+    @Story("100/2=50")
     void allureTest() {
         SearchSteps.searchFor("100/2=")
         assert CalculatorSteps.result == "50"
-        assert CalculatorSteps.calculate("(1-3)*(3-7+6)-5/2=") == "−6,5"
+    }
+
+    @Test
+    @Description("Пример теста 2")
+    @Severity(SeverityLevel.CRITICAL)
+    @TmsLink("TC-2")
+    @Story("12*2=24")
+    void allureTestB() {
+        SearchSteps.searchFor("12*2=")
+        assert CalculatorSteps.result == "24"
+    }
+
+    @Test
+    @Description("Пример теста 3")
+    @Severity(SeverityLevel.BLOCKER)
+    @TmsLink("TC-3")
+    @Story("1*2*3*4-1-2-3-4=14")
+    void allureTestC() {
+        SearchSteps.searchFor("2*2=")
+        assert CalculatorSteps.result == "4"
         assert CalculatorSteps.calculate("1*2*3*4-1-2-3-4=") == "14"
     }
 }

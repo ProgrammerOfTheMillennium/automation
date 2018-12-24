@@ -1,6 +1,8 @@
 package io.test.automation.lesson5.pages
 
 import com.codeborne.selenide.SelenideElement
+import io.qameta.allure.Attachment
+import io.qameta.allure.Step
 
 import static com.codeborne.selenide.Selenide.$
 
@@ -14,10 +16,14 @@ import static com.codeborne.selenide.Selenide.$
 
 class SearchPage {
 
+    @Step("Получаем поле ввода поиска")
+    @Attachment
     static SelenideElement getSearchField() {
         return $("#text")
     }
 
+    @Step("Получаем кнопку поиска")
+    @Attachment
     static getSearchButton() {
         $(".search2__button")
     }

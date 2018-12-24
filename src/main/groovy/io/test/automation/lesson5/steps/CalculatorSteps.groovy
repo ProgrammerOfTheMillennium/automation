@@ -1,6 +1,8 @@
 package io.test.automation.lesson5.steps
 
 import com.codeborne.selenide.Condition
+import io.qameta.allure.Attachment
+import io.qameta.allure.Step
 import io.test.automation.lesson5.pages.SearchResultsPage
 
 /**
@@ -17,6 +19,8 @@ class CalculatorSteps {
         SearchResultsPage.calculator.self.shouldBe(Condition.visible)
     }
 
+    @Step("Подсчитываем результат: {0}")
+    @Attachment
     static String calculate(String expression) {
         waitCalculator()
         SearchResultsPage.calculator.clickButton("C")
@@ -45,6 +49,8 @@ class CalculatorSteps {
         return SearchResultsPage.calculator.result
     }
 
+    @Step("Возвращаем результат")
+    @Attachment
     static String getResult() {
         waitCalculator()
         SearchResultsPage.calculator.result

@@ -1,7 +1,7 @@
 package io.test.automation.lesson5.steps
 
 import com.codeborne.selenide.Selenide
-import com.codeborne.selenide.WebDriverRunner
+import io.qameta.allure.Step
 import io.test.automation.lesson5.pages.SearchPage
 
 /**
@@ -14,13 +14,12 @@ import io.test.automation.lesson5.pages.SearchPage
 
 class SearchSteps {
 
+    @Step("Открываем страницу поиска")
     private static openSearchPage() {
-        def desiredUrl = "https://ya.ru/"
-        if(WebDriverRunner.url() != desiredUrl) {
-            Selenide.open(desiredUrl)
-        }
+        Selenide.open("https://ya.ru/")
     }
 
+    @Step("Выполняем поиск: {0}")
     static searchFor(String searchRequest) {
         openSearchPage()
         SearchPage.searchField.value = searchRequest

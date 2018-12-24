@@ -34,12 +34,12 @@ dependencies {
     compile group: 'org.awaitility', name: 'awaitility', version: '3.1.5'
     // https://mvnrepository.com/artifact/org.hamcrest/hamcrest
     compile group: 'org.hamcrest', name: 'hamcrest', version: '2.1'
-    // https://mvnrepository.com/artifact/io.qameta.allure/allure-testng
-    compile group: 'io.qameta.allure', name: 'allure-testng', version: '2.7.0'
+    // https://mvnrepository.com/artifact/io.qameta.allure/allure-junit4
+    compile group: 'io.qameta.allure', name: 'allure-junit4', version: '2.7.0'
 }
 
 test {
-    useTestNG()
+    useJUnit()
     ignoreFailures = true
 }
 

@@ -2,6 +2,8 @@ package io.test.automation.lesson5.elements
 
 import com.codeborne.selenide.ElementsContainer
 import com.codeborne.selenide.SelenideElement
+import io.qameta.allure.Attachment
+import io.qameta.allure.Step
 
 /**
  * Created on 19.12.2018
@@ -13,6 +15,8 @@ import com.codeborne.selenide.SelenideElement
 
 class Calculator extends ElementsContainer {
     //Геттеры для элементов
+    @Step("Получаем кнопку {0}")
+    @Attachment
     private SelenideElement getButton(String name) {
         self.$x(".//button[.='$name']")
     }

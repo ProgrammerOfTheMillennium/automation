@@ -15,21 +15,20 @@ class LessonEight {
 
     @Test
     void windowsTest() {
-        //Работаем с первой вкладкой
-        SearchSteps.searchFor("Dogs")
+        TabManager.cleanUp()
 
-        //Создаем и переключаемся на вторую
-        String windowHandle = TabManager.getCurrentHandle()
-        Set<String> handles = TabManager.getCurrentHandles()
-        TabManager.openNewWindow()
-        String newHandle = TabManager.waitForNewWindow(handles)
-        TabManager.switchToWindow(newHandle)
+        SearchSteps.searchFor("1")
+        TabManager.init()
 
-        //Работаем со второй вкладкой
-        SearchSteps.searchFor("Cats")
+        for (int i = 2; i <= 5 ; i++) {
+            def searchRequest = "$i"
+            TabManager.newTab(searchRequest)
+            SearchSteps.searchFor(searchRequest)
+        }
 
-        //Закрываем и возвращаемся на первую
-        TabManager.closeCurrentWindow()
-        TabManager.switchToWindow(windowHandle)
+        TabManager.closeAndSwitch("2", "3")
+        TabManager.closeAndSwitch("3", "MAIN")
+
+        TabManager.cleanUp()
     }
 }

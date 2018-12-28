@@ -6,6 +6,8 @@ import io.qameta.allure.Attachment
 import io.qameta.allure.Step
 import io.test.automation.lesson6.helpers.WaitHelper
 import org.awaitility.Duration
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 
 /**
  * Created on 26.12.2018
@@ -16,6 +18,7 @@ import org.awaitility.Duration
  */
 
 class TabManager {
+    private static Logger LOGGER = LoggerFactory.getLogger(this)
 
     private static HashMap<String, String> aliasToHandleMap = new HashMap<>()
     private static HashMap<String, String> handleToAliasMap = new HashMap<>()
@@ -30,21 +33,27 @@ class TabManager {
     }
 
     static void init() {
+        LOGGER.info("Инициализируем главное окно")
         def handle = getCurrentHandle()
         addAlias("MAIN", handle)
+        LOGGER.info("Для главного окна ($handle) создана метка MAIN")
     }
 
     static void newTab(String alias) {
+        LOGGER.info("Создаем новую вкладку: $alias")
         Set<String> handles = getCurrentHandles()
         openNewWindow()
         String newHandle = waitForNewWindow(handles)
         switchToWindow(newHandle)
         addAlias(alias, newHandle)
+        LOGGER.info("Создали вкладку с хэндлом: $newHandle")
     }
 
     static void switchToAlias(String alias) {
+        LOGGER.info("Переключаемся на окно с меткой: $alias")
         def handle = getHandleByAlias(alias)
         switchToWindow(handle)
+        LOGGER.info("Успешно переключились на окно с меткой: $alias")
     }
 
     static void closeAndSwitch(String aliasToSwitch) {
@@ -53,14 +62,18 @@ class TabManager {
     }
 
     static void closeAndSwitch(String aliasToClose, String aliasToSwitch) {
+        LOGGER.info("Закрываем окно $aliasToClose и переключаемся на $aliasToSwitch")
         switchToAlias(aliasToClose)
         closeCurrentWindow()
         switchToAlias(aliasToSwitch)
+        LOGGER.info("Закрыли окно $aliasToClose и переключились на $aliasToSwitch")
     }
 
     static void cleanUp() {
+        LOGGER.info("Очищаем коллекцию меток окон")
         aliasToHandleMap.clear()
         handleToAliasMap.clear()
+        LOGGER.info("Успешно очистили метки окон")
     }
 
     @Step("Переключаемся на окно: {0}")

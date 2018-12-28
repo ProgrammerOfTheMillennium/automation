@@ -1,7 +1,10 @@
 package io.test.automation
 
+import com.codeborne.selenide.logevents.SelenideLogger
 import io.test.automation.lesson5.steps.CalculatorSteps
 import io.test.automation.lesson5.steps.SearchSteps
+import io.test.automation.lesson9.LogListener
+import org.junit.Before
 import org.junit.Test
 
 /**
@@ -12,7 +15,8 @@ import org.junit.Test
  *         email: ykudryavtsev@maxilect.com
  */
 
-class LessonFive {
+class LessonFive extends BaseTest{
+
     @Test
     void pageObjectTest() {
         SearchSteps.searchFor("100/2=")

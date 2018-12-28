@@ -1,10 +1,12 @@
 package io.test.automation
 
+import com.codeborne.selenide.Selenide
 import com.codeborne.selenide.logevents.SelenideLogger
 import groovy.util.logging.Slf4j
 import io.test.automation.lesson5.steps.SearchSteps
 import io.test.automation.lesson8.TabManager
 import io.test.automation.lesson9.LogListener
+import okhttp3.internal.connection.RouteSelector
 import org.junit.Before
 import org.junit.Test
 
@@ -15,22 +17,24 @@ import org.junit.Test
  *         skype: yuri.kudryavtsev.indeed
  *         email: ykudryavtsev@maxilect.com
  */
+
 @Slf4j
-class LessonNine {
+class LessonNine extends BaseTest {
 
-    @Before
-    void setUp() {
-        SelenideLogger.addListener("LogListener", new LogListener())
-    }
-
-    @Test
-    void loggingTestB() {
-        log.info("INFO")
-        log.error("ERROR")
-        log.warn("WARN")
-        log.debug("DEBUG")
-        log.trace("TRACE")
-    }
+//    @Test
+//    void loggingTestB() {
+//        String value = ""
+//        if(value == "test") {
+//            log.info("Переменная value имеет верное значение")
+//        } else {
+//            log.error("Переменная ")
+//        }
+//        log.info("Запущен тест")
+//        log.error("Возникла ошибка")
+//        log.warn("Предупреждение!!!")
+//        log.debug("Отладочная информация")
+//        log.trace("Супердетальная низкоуровневая информация")
+//    }
 
     @Test
     void loggingTest() {

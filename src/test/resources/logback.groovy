@@ -21,9 +21,9 @@ appender("STDOUT", ConsoleAppender) {
 }
 
 appender("FILE", FileAppender) {
-    file = "C:\\automation\\debug.txt"
+    file = "C:\\automation\\warn.txt"
     filter(ThresholdFilter) {
-        level = DEBUG
+        level = INFO
     }
     encoder(PatternLayoutEncoder) {
         pattern = LOG_PATTERN

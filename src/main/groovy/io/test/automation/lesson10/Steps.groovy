@@ -1,6 +1,5 @@
 package io.test.automation.lesson10
 
-import com.codeborne.selenide.Selenide
 import com.codeborne.selenide.SelenideElement
 import groovy.util.logging.Slf4j
 

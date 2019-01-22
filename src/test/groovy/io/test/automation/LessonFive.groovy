@@ -1,11 +1,8 @@
 package io.test.automation
 
-import com.codeborne.selenide.logevents.SelenideLogger
 import io.test.automation.lesson5.steps.CalculatorSteps
 import io.test.automation.lesson5.steps.SearchSteps
-import io.test.automation.lesson9.LogListener
-import org.junit.Before
-import org.junit.Test
+import org.testng.annotations.Test
 
 /**
  * Created on 19.12.2018
@@ -15,7 +12,7 @@ import org.junit.Test
  *         email: ykudryavtsev@maxilect.com
  */
 
-class LessonFive extends BaseTest{
+class LessonFive extends BaseTest {
 
     @Test
     void pageObjectTest() {

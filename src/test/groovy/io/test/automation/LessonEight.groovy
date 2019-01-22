@@ -2,7 +2,7 @@ package io.test.automation
 
 import io.test.automation.lesson5.steps.SearchSteps
 import io.test.automation.lesson8.TabManager
-import org.junit.Test
+import org.testng.annotations.Test
 
 /**
  * Created on 11.12.2018
@@ -20,7 +20,7 @@ class LessonEight {
         SearchSteps.searchFor("1")
         TabManager.init()
 
-        for (int i = 2; i <= 5 ; i++) {
+        for (int i = 2; i <= 5; i++) {
             def searchRequest = "$i"
             TabManager.newTab(searchRequest)
             SearchSteps.searchFor(searchRequest)

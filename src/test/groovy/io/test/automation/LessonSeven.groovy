@@ -1,17 +1,9 @@
 package io.test.automation
 
-import io.qameta.allure.Description
-import io.qameta.allure.Epic
-import io.qameta.allure.Feature
-import io.qameta.allure.Issue
-import io.qameta.allure.Link
-import io.qameta.allure.Severity
-import io.qameta.allure.SeverityLevel
-import io.qameta.allure.Story
-import io.qameta.allure.TmsLink
+import io.qameta.allure.*
 import io.test.automation.lesson5.steps.CalculatorSteps
 import io.test.automation.lesson5.steps.SearchSteps
-import org.junit.Test
+import org.testng.annotations.Test
 
 /**
  * Created on 19.12.2018

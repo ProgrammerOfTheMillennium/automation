@@ -1,8 +1,7 @@
 package io.test.automation
 
-
-import org.junit.Test
 import org.openqa.selenium.By
+import org.testng.annotations.Test
 
 import static com.codeborne.selenide.Selenide.*
 

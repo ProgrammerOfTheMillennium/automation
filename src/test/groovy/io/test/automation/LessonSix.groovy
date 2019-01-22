@@ -1,10 +1,10 @@
 package io.test.automation
 
-import io.test.automation.lesson6.helpers.WaitHelper
+
 import io.test.automation.lesson6.steps.SearchSteps
 import org.awaitility.Awaitility
 import org.awaitility.Duration
-import org.junit.Test
+import org.testng.annotations.Test
 
 import java.util.concurrent.TimeUnit
 
@@ -31,7 +31,8 @@ class LessonSix {
                     assertThat(
                             "Неправильный поисковый запрос", //сообщение об ошибке в случае таймаута
                             SearchSteps.getCurrentSearchRequest(), //вызов метода, который возвращает реальный результат
-                            equalTo("котики")) //инструкция по проверке - актуальный результат должен быть равен "котики"
+                            equalTo("котики"))
+                    //инструкция по проверке - актуальный результат должен быть равен "котики"
                 })
 
 //        WaitHelper.waitFor({

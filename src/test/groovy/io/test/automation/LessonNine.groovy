@@ -1,14 +1,9 @@
 package io.test.automation
 
-import com.codeborne.selenide.Selenide
-import com.codeborne.selenide.logevents.SelenideLogger
 import groovy.util.logging.Slf4j
 import io.test.automation.lesson5.steps.SearchSteps
 import io.test.automation.lesson8.TabManager
-import io.test.automation.lesson9.LogListener
-import okhttp3.internal.connection.RouteSelector
-import org.junit.Before
-import org.junit.Test
+import org.testng.annotations.Test
 
 /**
  * Created on 11.12.2018
@@ -43,7 +38,7 @@ class LessonNine extends BaseTest {
         SearchSteps.searchFor("1")
         TabManager.init()
 
-        for (int i = 2; i <= 5 ; i++) {
+        for (int i = 2; i <= 5; i++) {
             def searchRequest = "$i"
             TabManager.newTab(searchRequest)
             SearchSteps.searchFor(searchRequest)

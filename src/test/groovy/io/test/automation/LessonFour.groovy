@@ -1,7 +1,7 @@
 package io.test.automation
 
 import com.codeborne.selenide.Selenide
-import org.junit.Test
+import org.testng.annotations.Test
 
 import static com.codeborne.selenide.Selenide.$
 

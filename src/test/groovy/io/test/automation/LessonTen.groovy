@@ -5,9 +5,9 @@ import groovy.util.logging.Slf4j
 import io.test.automation.lesson10.SelenidePage
 import io.test.automation.lesson10.Steps
 import io.test.automation.lesson10.YandexPage
-import org.junit.After
-import org.junit.Before
-import org.junit.Test
+import org.testng.annotations.AfterMethod
+import org.testng.annotations.BeforeMethod
+import org.testng.annotations.Test
 
 /**
  * Created on 14.01.2019
@@ -23,12 +23,12 @@ class LessonTen {
     public static final String COLOR_RED = "rgba(204, 0, 0, 1)"
     public static final String COLOR_BLUE = "rgba(0, 84, 185, 1)"
 
-    @Before
+    @BeforeMethod
     void setUp() {
         log.info("Begin of test")
     }
 
-    @After
+    @AfterMethod
     void tearDown() {
         log.info("End of test")
     }

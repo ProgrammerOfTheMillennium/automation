@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name='Regress' parallel="tests" thread-count="3">
+    <test name='TEST_A'>
+        <groups>
+            <run>
+                <include name="TEST_A"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="io.test.automation"/>
+        </packages>
+    </test>
+    <test name='CLASS_B wo TEST_A'>
+        <groups>
+            <run>
+                <include name="CLASS_B"/>
+                <exclude name="TEST_A"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="io.test.automation"/>
+        </packages>
+    </test>
+    <test name='TEST_B'>
+        <groups>
+            <run>
+                <include name="TEST_B"/>
+                <exclude name="CLASS_B"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="io.test.automation"/>
+        </packages>
+    </test>
+</suite>

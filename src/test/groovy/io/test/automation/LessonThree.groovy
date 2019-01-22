@@ -1,11 +1,9 @@
 package io.test.automation
 
 import com.codeborne.selenide.CollectionCondition
-import com.codeborne.selenide.ElementsCollection
 import com.codeborne.selenide.Selenide
-import com.codeborne.selenide.SelenideElement
-import org.junit.Test
 import org.openqa.selenium.By
+import org.testng.annotations.Test
 
 import static com.codeborne.selenide.Selenide.$
 import static com.codeborne.selenide.Selenide.$$
